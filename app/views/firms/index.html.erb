@@ -1,0 +1,27 @@
+<!-- app/views/firm/index.html.erb -->
+
+<div class="container">
+  <div class="row">
+    <div class="col" data-controller="insert-in-list">
+      <!-- ... -->
+      <div>
+      <div data-controller="toggle" class="mt-5">
+        <button class="btn btn-outline-primary" data-action="click->toggle#fire">Add a new firm</button>
+        <div data-toggle-target="togglableElement" class="d-none">
+          <%= render "form", firm: @firm %>
+        </div>
+      </div>
+      <h3>Entreprises</h3>
+      <div id="firms" data-insert-in-list-target="items">
+        <% @firms.each do |firm| %>
+          <%= render firm, firm: @firm %>
+        <% end %>
+      </div>
+      <div data-controller="my-controller" data-insert-in-list-target="result">
+        <!-- La liste des résultats sera affichée ici -->
+      </div>
+
+      </div>
+    </div>
+  </div>
+</div>
