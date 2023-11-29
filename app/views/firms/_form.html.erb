@@ -1,7 +1,7 @@
 <%= simple_form_for firm,
     data: {
       insert_in_list_target: "form",
-      action: "submit->insert-in-list#scrap"
+      action: "submit->insert-in-list#get_all_companies"
     } do |f| %>
   <div class="form-inputs" data-insert-in-list-target="firm">
   <%= f.input :name %>
